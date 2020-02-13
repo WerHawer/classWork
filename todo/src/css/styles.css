@@ -1,0 +1,104 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  list-style: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 20px;
+  width: 85%;
+}
+
+.todoForm {
+  margin-bottom: 30px;
+}
+
+.inputName,
+.inputText {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  min-height: 30px;
+  margin-bottom: 15px;
+}
+
+.inputText {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.submitBtn {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.done,
+.delete {
+  display: inline-block;
+  width: 100px;
+}
+
+.todo-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.todo-element {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  width: 32%;
+  padding: 15px;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  background-color: rgb(223, 220, 217);
+  margin-right: 1.33%;
+  margin-bottom: 20px;
+}
+
+.todo-element--true {
+  background-color: green;
+}
+
+.todo-element:last-child {
+  margin-right: 0;
+}
+
+.h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  flex: 0 0 auto;
+}
+
+.description {
+  font-size: 18px;
+  margin-bottom: 12px;
+  flex: 1 0 auto;
+}
+
+.buttons {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 auto;
+}
+
+.noTasks {
+  margin: 0 auto;
+  font-size: 20px;
+  justify-self: center;
+}

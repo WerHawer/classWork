@@ -1,0 +1,19 @@
+
+        <li data-id={{id}} class="todo-element todo-element--{{done}}">
+ 
+
+    {{#if this.title}}
+          <h2 class="h2">{{title}}</h2>
+    {{else}}
+          <h2 class="h2">Title</h2>
+    {{/if}}
+    {{#if this.text}}
+          <p class="description">{{text}}</p>
+    {{else}}
+          <p class="description">What you whant todo?</p>
+    {{/if}}
+          <div class="buttons"> 
+            <button type="button" class="done" data-action="done">Done</button>
+            <button type="button" class="delete" data-action="delete">Delete</button>
+          </div>
+        </li>
