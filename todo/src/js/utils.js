@@ -1,11 +1,5 @@
-export function createId() {
-  return Date.now();
-}
+export const createId = () => Date.now();
 
-export function cleanArea(area) {
-  area.innerHTML = '';
-}
+export const cleanArea = area => (area.innerHTML = '');
 
-export function clearInput(input) {
-  input.value = '';
-}
+export const clearInput = input => (input.value = '');

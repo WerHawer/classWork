@@ -10,8 +10,8 @@ export default {
   },
 
   done(targetId) {
-    this.tasks = this.tasks.filter(task =>
-      task.id === Number(targetId) ? (task.done = true) : task,
+    this.tasks = this.tasks.map(task =>
+      task.id === Number(targetId) ? { ...task, done: true } : task,
     );
   },
 };

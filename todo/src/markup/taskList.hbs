@@ -1,6 +1,11 @@
 {{#if tasks}}
 {{#each tasks}}
-        <li data-id={{this.id}} class="todo-element todo-element--{{this.done}}">
+
+{{#if this.done}}
+        <li data-id={{this.id}} class="todo-element todo-element--done">
+{{else}}
+        <li data-id={{this.id}} class="todo-element">
+{{/if}}
 
     {{#if this.title}}
           <h2 class="h2">{{this.title}}</h2>

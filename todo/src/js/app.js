@@ -28,7 +28,7 @@ function addTask(e) {
 
   if (e.target.dataset.action !== 'addTask') return;
 
-  if (tasks.tasks.length === 0) {
+  if (!tasks.tasks.length) {
     cleanArea(refs.output);
   }
 
@@ -54,8 +54,9 @@ function doneTask(e) {
 
   tasks.done(targetId);
 
-  card.classList.add('todo-element--true');
+  card.classList.add('todo-element--done');
   localStorage.save('tasksLS', tasks.tasks);
+  return;
 }
 
 function deleteTask(e) {
@@ -68,7 +69,7 @@ function deleteTask(e) {
   card.remove();
   localStorage.save('tasksLS', tasks.tasks);
 
-  if (tasks.tasks.length === 0) {
+  if (!tasks.tasks.length) {
     TasksListRender();
   }
 }

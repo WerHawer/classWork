@@ -69,7 +69,7 @@ html {
   margin-bottom: 20px;
 }
 
-.todo-element--true {
+.todo-element--done {
   background-color: green;
 }
 
