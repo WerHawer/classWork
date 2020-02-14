@@ -1,7 +1,7 @@
 'use strict';
 import localStorage from './localStorage';
 import { oneTaskRender, TasksListRender } from './render';
-import tasks from './tasks';
+import toDo from './tasks';
 import refs from './refs';
 import { createId, cleanArea, clearInput } from './utils';
 
@@ -16,7 +16,7 @@ function start(key) {
   const objTask = {};
 
   if (tasksLs) {
-    tasks.tasks = tasksLs;
+    toDo.tasks = tasksLs;
     objTask.tasks = tasksLs;
   }
 
@@ -28,7 +28,7 @@ function addTask(e) {
 
   if (e.target.dataset.action !== 'addTask') return;
 
-  if (!tasks.tasks.length) {
+  if (!toDo.tasks.length) {
     cleanArea(refs.output);
   }
 
@@ -37,13 +37,13 @@ function addTask(e) {
 
   const taskObj = { title, text, id: createId(), done: false };
 
-  tasks.add(taskObj);
+  toDo.addTask(taskObj);
   oneTaskRender(taskObj);
 
   clearInput(refs.inputName);
   clearInput(refs.inputText);
 
-  localStorage.save('tasksLS', tasks.tasks);
+  localStorage.save('tasksLS', toDo.tasks);
 }
 
 function doneTask(e) {
@@ -52,10 +52,10 @@ function doneTask(e) {
   const card = e.target.closest('li');
   const targetId = card.dataset.id;
 
-  tasks.done(targetId);
+  toDo.doneTask(targetId);
 
   card.classList.add('todo-element--done');
-  localStorage.save('tasksLS', tasks.tasks);
+  localStorage.save('tasksLS', toDo.tasks);
   return;
 }
 
@@ -65,11 +65,11 @@ function deleteTask(e) {
   const card = e.target.closest('li');
   const targetId = card.dataset.id;
 
-  tasks.delete(targetId);
+  toDo.deleteTask(targetId);
   card.remove();
-  localStorage.save('tasksLS', tasks.tasks);
+  localStorage.save('tasksLS', toDo.tasks);
 
-  if (!tasks.tasks.length) {
+  if (!toDo.tasks.length) {
     TasksListRender();
   }
 }

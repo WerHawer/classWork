@@ -1,15 +1,15 @@
 export default {
   tasks: [],
 
-  add(obj) {
+  addTask(obj) {
     this.tasks = [...this.tasks, obj];
   },
 
-  delete(targetId) {
+  deleteTask(targetId) {
     this.tasks = this.tasks.filter(({ id }) => id !== Number(targetId));
   },
 
-  done(targetId) {
+  doneTask(targetId) {
     this.tasks = this.tasks.map(task =>
       task.id === Number(targetId) ? { ...task, done: true } : task,
     );
