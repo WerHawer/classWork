@@ -56,7 +56,6 @@ function doneTask(e) {
 
   card.classList.add('todo-element--done');
   localStorage.save('tasksLS', toDo.tasks);
-  return;
 }
 
 function deleteTask(e) {
